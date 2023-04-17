@@ -4,3 +4,4 @@ Continuous Integration and Continuous Deployment repository for Matthew and Aust
 Things we did:
 - made upstream and origin
 - matt is doing pull request and git pulling
+- Added workflows

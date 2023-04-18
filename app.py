@@ -8,7 +8,7 @@ def read_count():
     try:
         with open('data/count.txt', 'r') as f:
             count = int(f.read())
-        return count:
+        return count
     except IOError:
         return 0
 

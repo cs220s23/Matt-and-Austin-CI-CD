@@ -15,7 +15,7 @@ def read_count():
 
 
 def save_count(count):
-    # ensure the directory exists
+    # Ensure the directory exists
     os.makedirs('data', exist_ok=True)
     with open('data/count.txt', 'w') as f:
         f.write(str(count))

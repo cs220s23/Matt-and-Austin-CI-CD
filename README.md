@@ -7,3 +7,4 @@ Things we did:
 - Added workflows
 - Created new Branch for workflows
 - Working with GitHub Actions
+- We added tests

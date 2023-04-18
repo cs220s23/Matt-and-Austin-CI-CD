@@ -4,7 +4,6 @@ import os
 
 app = Flask(__name__)
 
-
 def read_count():
     try:
         with open('data/count.txt', 'r') as f:

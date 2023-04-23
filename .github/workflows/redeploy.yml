@@ -1,5 +1,5 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: Redeploy on a Merge
+run-name: ${{ github.actor }} is redeploying 🚀
 on:
   push:
     branches:
@@ -14,10 +14,10 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
     env:
-          LABSUSER: ${{ secrets.MATT_LABSUSER3 }}
+        super_secret: ${{secrets.MATT_LABSUSER2 }}
     steps:
       - name: Spin up EC2 Instance
         shell: bash
-        if: ${{ env.LABSUSER != '' }}
+        if: ${{ env.super_secret != '' }}
         run: |
-          ssh -i ${{ env.LABSUSER }} ec2-user@34.224.26.67 "bash ./redeploy.sh"
+          ssh -i "$MATT_LABSUSER2" ec2-user@34.224.26.67 "bash ./redeploy.sh"

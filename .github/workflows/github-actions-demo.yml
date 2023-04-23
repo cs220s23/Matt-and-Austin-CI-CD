@@ -9,7 +9,7 @@ on:
       - 'main'
     types: [closed]
   workflow_dispatch:
-jobs:
+jobs: 
   Explore-GitHub-Actions:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
@@ -26,4 +26,4 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Spin up the instance
-      - run: ssh ${{ secrets.MATT_LABSUSER }} ec2-user@ Matt-CI-CD-2/redeploy.sh
+        run: ssh -i ${{ secrets.MATT_LABSUSER }} ec2-user@34.224.26.67 "bash ./redeploy.sh"

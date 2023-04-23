@@ -29,4 +29,4 @@ jobs:
         shell: bash
         env:
             SUPER_SECRET: ${{ secrets.MATT_LABSUSER }}
-        run: ssh -i ~/Courses/220/Matt-and-Austin-CI-CD/"$SUPER_SECRET" ec2-user@34.224.26.67 "bash ./redeploy.sh"
+        run: ssh -i "$env:SUPER_SECRET" ec2-user@34.224.26.67 "bash ./redeploy.sh"

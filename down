@@ -1,0 +1,6 @@
+# removes all the containers and do it backwards from the up file
+docker rm -f server
+
+# make sure data is saved to the disk before stopping redis
+docker exec -it redis redis-cli save
+docker rm -f redis

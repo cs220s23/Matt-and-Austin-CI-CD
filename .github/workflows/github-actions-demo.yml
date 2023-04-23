@@ -25,8 +25,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: spin up instance
-        shell: bash
+      - shell: bash
         env:
             SUPER_SECRET: ${{ secrets.MATT_LABSUSER }}
-        run: ssh -i "$env:SUPER_SECRET" ec2-user@34.224.26.67 "bash ./redeploy.sh"
+        run: |
+          ssh -i "$env:SUPER_SECRET" ec2-user@34.224.26.67 "bash ./redeploy.sh"

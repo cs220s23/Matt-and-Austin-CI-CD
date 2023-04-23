@@ -9,7 +9,7 @@ on:
       - 'main'
     types: [closed]
   workflow_dispatch:
-jobs:
+jobs: 
   Explore-GitHub-Actions:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest

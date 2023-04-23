@@ -9,3 +9,4 @@ docker build -t server .
 ./down
 
 ./up
+

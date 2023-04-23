@@ -27,6 +27,6 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - shell: bash
         env:
-            SUPER_SECRET: ${{ secrets.MATT_LABSUSER }}
+            SUPER_SECRET: ${{ secrets.MATT_LABSUSER3 }}
         run: |
           ssh -i "$env:SUPER_SECRET" ec2-user@34.224.26.67 "bash ./redeploy.sh"

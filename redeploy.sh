@@ -4,9 +4,10 @@ sudo yum install git -y
 
 sudo yum install docker
 
-docker build -t server .
+sudo systemctl start docker
 
-./down
+sudo docker build -t app .
 
-./up
+sudo ./down
 
+sudo ./up

@@ -4,11 +4,10 @@ on:
   push:
     branches:
       - 'main'
-  pull_request:
-    branches:
-      - 'main'
-    types: [closed]
-  workflow_dispatch:
+  
+env:
+  INSTANCE_IP: "3.95.38.95"
+  USER: "ec2-user"
   
 permissions:
   contents: read
@@ -17,13 +16,15 @@ permissions:
 jobs: 
   Redeploy:
     if: github.event.pull_request.merged == true
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:      
       - name: Spin up EC2 Instance
         run: |
           mkdir -p ~/.ssh/
-          echo "$ssh-private-key" > ~/.ssh/github-actions-key
+          echo "$SSH_KEY" > ~/.ssh/github-actions-key
           chmod +x ~/.ssh/github-actions-key
-          ssh -i ~/.ssh/github-actions-key -o StrictHostKeyChecking=no ec2-user@3.95.38.95 "bash ./redeploy.sh"
+          ssh -i ~/.ssh/github-actions-key -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "bash ./redeploy.sh"
         env:
-          ssh-private-key: ${{ secrets.MATT_LABSUSER2 }}
+          SSH_HOST: ${{ env.INSTANCE_IP }}
+          SSH_USER: ${{ env.USER }}
+          SSH_KEY: ${{ secrets.MATT_LABSUSER2 }} 

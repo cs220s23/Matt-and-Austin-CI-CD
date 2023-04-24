@@ -1,6 +1,9 @@
 name: Redeploy on a Merge
 run-name: ${{ github.actor }} is redeploying 🚀
 on:
+  push:
+    branches:
+      - 'main'
   pull_request:
     branches:
       - 'main'

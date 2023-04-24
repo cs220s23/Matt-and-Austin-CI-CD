@@ -22,4 +22,4 @@ jobs:
       - name: Spin up EC2 Instance
         shell: bash
         run: |
-          ssh -i "$super_secret" ec2-user@34.224.26.67 "bash ./redeploy.sh"
+          ssh -i "$super_secret" ec2-user@3.95.38.95 "bash ./redeploy.sh"

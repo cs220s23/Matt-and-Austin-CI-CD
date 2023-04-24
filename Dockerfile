@@ -1,15 +1,12 @@
 FROM python:slim
 
-WORKDIR /server
+WORKDIR /app
 
 COPY requirements.txt .
 
 RUN python3 -m venv .venv
-RUN .venv/bin/pip install -r requirements.txt
-
-COPY app.env .env
+RUN .venv/bin/pip3 install -r requirements.txt
 
 COPY app.py .
 
-CMD [".venv/bin/python3", "app.py"]
-
+CMD [".venv/bin/gunicorn", "--bind", "0.0.0.0:80", "app:app"]

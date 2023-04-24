@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-20.04
     env:
         super_secret: ${{secrets.MATT_LABSUSER2 }}
-    steps:
+    steps: 
       - name: Spin up EC2 Instance
         shell: bash
         if: ${{ env.super_secret != '' }}

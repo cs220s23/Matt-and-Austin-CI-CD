@@ -13,15 +13,12 @@ jobs:
   Redeploy:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
-    steps: 
-      - uses: actions/checkout@v3
-            # Make sure the @v0.7.0 matches the current version of the action
-      - uses: webfactory/ssh-agent@v0.7.0
-        with:
-          ssh-private-key: ${{ secrets.MATT_LABSUSER2 }}
+    steps:      
       - name: Spin up EC2 Instance
         run: |
           mkdir -p ~/.ssh/
-          echo "$MATT_LABSUSER2" > ~/.ssh/github-actions-key
+          echo "$ssh-private-key" > ~/.ssh/github-actions-key
           chmod +x ~/.ssh/github-actions-key
           ssh -i ~/.ssh/github-actions-key ec2-user@3.95.38.95 "bash ./redeploy.sh"
+        env:
+          ssh-private-key: ${{ secrets.MATT_LABSUSER2 }}

@@ -20,6 +20,5 @@ jobs:
         with:
           ssh-private-key: ${{secrets.MATT_LABSUSER2 }}
       - name: Spin up EC2 Instance
-        shell: bash
         run: |
-          ssh -i "$ssh-private-key" ec2-user@3.95.38.95 "bash ./redeploy.sh"
+          ssh -i ssh-private-key ec2-user@3.95.38.95 "bash ./redeploy.sh"

@@ -9,6 +9,11 @@ on:
       - 'main'
     types: [closed]
   workflow_dispatch:
+  
+permissions:
+  contents: read
+  id-token: write
+  
 jobs: 
   Redeploy:
     if: github.event.pull_request.merged == true

@@ -12,7 +12,7 @@ on:
   
 env:
   INSTANCE_IP: "3.95.38.95"
-  USER: "ec2-user"
+  INSTANCE_USER: "ec2-user"
   
 permissions:
   contents: read
@@ -31,5 +31,5 @@ jobs:
           ssh -i ~/.ssh/github-actions-key -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "bash ./redeploy.sh"
         env:
           SSH_HOST: ${{ env.INSTANCE_IP }}
-          SSH_USER: ${{ env.USER }}
+          SSH_USER: ${{ env.INSTANCE_USER }}
           SSH_KEY: ${{ secrets.MATT_LABSUSER2 }} 

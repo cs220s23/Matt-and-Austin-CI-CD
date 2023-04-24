@@ -9,7 +9,7 @@ on:
       - 'main'
     types: [closed]
   workflow_dispatch:
-  
+   
 env:
   INSTANCE_IP: "52.207.249.47"
   INSTANCE_USER: "ec2-user"

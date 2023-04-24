@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
    
 env:
-  INSTANCE_IP: "52.207.249.47"
+  INSTANCE_IP: "44.201.192.85"
   INSTANCE_USER: "ec2-user"
   
 permissions:

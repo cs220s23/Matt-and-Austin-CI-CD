@@ -24,6 +24,6 @@ jobs:
           mkdir -p ~/.ssh/
           echo "$ssh-private-key" > ~/.ssh/github-actions-key
           chmod +x ~/.ssh/github-actions-key
-          ssh -i ~/.ssh/github-actions-key ec2-user@3.95.38.95 "bash ./redeploy.sh"
+          ssh -i ~/.ssh/github-actions-key -o StrictHostKeyChecking=no ec2-user@3.95.38.95 "bash ./redeploy.sh"
         env:
           ssh-private-key: ${{ secrets.MATT_LABSUSER2 }}

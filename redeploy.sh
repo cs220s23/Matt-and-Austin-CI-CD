@@ -4,7 +4,7 @@ sudo yum install git -y
 
 sudo yum install docker
 
-rm -rf Matt-and-Austin-CI-CD
+sudo rm -rf Matt-and-Austin-CI-CD
 
 sudo git clone https://github.com/cs220s23/Matt-and-Austin-CI-CD.git
 

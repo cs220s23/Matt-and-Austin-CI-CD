@@ -10,7 +10,7 @@ On a pull request:
     - This will run a test on the code (currently an arbitrary, always true statement)
 
 Continuous Deployment:
-
+ 
 On a Merge:
  - Use GitHub Actions "ssh" into a script within an EC2 instance
     - This script will build a docker container in which an image of the app.py file will be built

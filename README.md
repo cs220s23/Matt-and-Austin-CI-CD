@@ -24,9 +24,11 @@ About app.py:
 About redeploy.sh
  - redeploy.sh will be the bash script used to perform the Continuous Deployment
     - This bash script begins by ensuring that the git and docker packages are installed within the EC2 instance
-    - This script removes any existent clone of this repository and proceeds to clone the repository again
-     - This is mainly to ensure that the EC2 instance remains up to date with this repository
+    - This script removes any existent clone of this repository and proceeds to clone the repository again. (This is mainly to ensure that the EC2 instance remains up to date with this repository)
     - This script ensures docker is running and runs the down file to bring down any currently operating containers
     - This script moves the environment variable for the redis container into the cloned repository
     - This script then builds new docker containers (namely app and redis) from the Dockerfile present in this repository and runs them 
     - This script concludes with some clean-up involving removing the redis environment variable from the cloned repository and copying the newest version of the redeploy.sh script into the instance, in order to be called on subsequent merges.
+
+Running the app within the EC2 instance:
+ - The app.py file can be run using the following string in any browser: 44.201.192.85:5000

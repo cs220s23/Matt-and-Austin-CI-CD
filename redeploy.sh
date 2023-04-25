@@ -1,12 +1,6 @@
 #!/bin/bash
 
-sudo yum install git -y
-
-sudo yum install docker -y
-
-sudo rm -rf Matt-and-Austin-CI-CD
-
-sudo git clone https://github.com/cs220s23/Matt-and-Austin-CI-CD.git
+sudo git pull https://github.com/cs220s23/Matt-and-Austin-CI-CD.git
 
 sudo systemctl start docker
 
@@ -17,7 +11,5 @@ sudo cp app.env ./Matt-and-Austin-CI-CD
 sudo docker build -t app ./Matt-and-Austin-CI-CD
 
 sudo ./Matt-and-Austin-CI-CD/up
-
-sudo rm -rf ./Matt-and-Austin-CI-CD/app.env
 
 sudo cp ./Matt-and-Austin-CI-CD/redeploy.sh .

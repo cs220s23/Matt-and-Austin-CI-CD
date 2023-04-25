@@ -8,12 +8,14 @@ sudo rm -rf Matt-and-Austin-CI-CD
 
 sudo git clone https://github.com/cs220s23/Matt-and-Austin-CI-CD.git
 
-cd Matt-and-Austin-CI-CD
-
 sudo systemctl start docker
 
-sudo docker build -t app .
+sudo ./Matt-and-Austin-CI-CD/down
 
-sudo ./down
+sudo cp app.env ./Matt-and-Austin-CI-CD
 
-sudo ./up
+sudo docker build -t app ./Matt-and-Austin-CI-CD
+
+sudo rm -rf ./Matt-and-Austin-CI-CD/app.env
+
+sudo ./Matt-and-Austin-CI-CD/up

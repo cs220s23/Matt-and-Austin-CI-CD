@@ -30,7 +30,9 @@ def save_count(count):
 
 @app.route("/")
 def hello():
-    #Gets count from redis, appends 1, save count to redis, returns a string incorporating this count
+    #Gets count from redis, appends 1
+    #save count to redis
+    #returns a string incorporating this count
     count = read_count()    
     count += 1
     save_count(count)

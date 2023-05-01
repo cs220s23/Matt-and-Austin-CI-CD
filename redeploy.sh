@@ -1,6 +1,8 @@
 #!/bin/bash
 
-sudo git pull https://github.com/cs220s23/Matt-and-Austin-CI-CD.git
+sudo rm -f Matt-and-Austin-CI-CD
+
+sudo git clone https://github.com/cs220s23/Matt-and-Austin-CI-CD.git
 
 sudo systemctl start docker
 

@@ -1,23 +1,28 @@
 from flask import Flask
+import requests
+import redis
+import time
+import dotenv
 import os
+
+
+dotenv.load_dotenv()
+
+host = os.getenv('REDIS_HOST')
+port = os.getenv('REDIS_PORT')
+
+r = redis.Redis(host=host, port=port)
 
 
 app = Flask(__name__)
 
 def read_count():
-    try:
-        with open('data/count.txt', 'r') as f:
-            count = int(f.read())
-        return count
-    except IOError:
-        return 0
+    r.get('count')
 
 
 def save_count(count):
     # This ensures that the directory exists
-    os.makedirs('data', exist_ok=True)
-    with open('data/count.txt', 'w') as f:
-        f.write(str(count))
+    r.set('count', count)
 
 
 @app.route("/")

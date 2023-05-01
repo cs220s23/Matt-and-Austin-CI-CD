@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo git pull origin Matt-and-Austin-CI-CD
+sudo git pull ./Matt-and-Austin-CI-CD
 
 sudo systemctl start docker
 

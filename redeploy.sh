@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo git pull 
+sudo git pull ./Matt-and-Austin-CI-CD
 
 sudo systemctl start docker
 

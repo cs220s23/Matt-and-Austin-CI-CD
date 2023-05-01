@@ -31,4 +31,4 @@ About redeploy.sh
     - This script concludes with some clean-up involving removing the redis environment variable from the cloned repository and copying the newest version of the redeploy.sh script into the instance, in order to be called on subsequent merges.
 
 Running the app within the EC2 instance:
- - The app.py file can be run using the following string in any browser: 3.89.125.125:5000
+ - The app.py file can be run using the following string in any browser: 54.205.12.49:5000

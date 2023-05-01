@@ -15,8 +15,11 @@ r = redis.Redis(host=host, port=port)
 app = Flask(__name__)
 
 def read_count():
-    count=int(r.get('count'))
-    return count
+    try:
+        count = int(r.get('count'))
+        return count
+    except IOError:
+        return 0
 
 
 def save_count(count):

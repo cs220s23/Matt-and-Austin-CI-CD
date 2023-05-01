@@ -33,7 +33,7 @@ def hello():
     #Gets count from redis, appends 1
     #save count to redis
     #returns a string incorporating this count
-    count = read_count()    
+    count = 1 #read_count()    
     count += 1
     save_count(count)
     return "<h1 style='color:green'>Hello World! {}</h1>".format(count) 

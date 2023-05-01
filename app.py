@@ -15,7 +15,10 @@ r = redis.Redis(host=host, port=port)
 app = Flask(__name__)
 
 def read_count():
-    count=int(r.get('count'))
+    if r.get('count') is None:
+        count=1
+    else 
+        count=int(r.get('count'))
     return count
 
 

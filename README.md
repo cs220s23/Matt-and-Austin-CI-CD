@@ -4,7 +4,7 @@ Continuous Integration and Continuous Deployment repository for Matthew and Aust
 Continuous Integration:
 
 On a pull request:
- - Use GitHub Actions to run pylint on this repository
+ - Use GitHub Actions to run py lint on this repository
     - This will ensure that any files present in this repository have the correct syntax and contain no blatant mistakes
  - Use GitHub Actions to run pytest on this repository
     - This will run a test on the code (currently an arbitrary, always true statement)

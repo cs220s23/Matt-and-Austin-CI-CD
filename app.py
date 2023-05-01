@@ -19,7 +19,7 @@ def read_count():
     try:
         count = int(r.get('count'))
         return count
-    except IOError:
+    except ValueError:
         return 0
 
 
@@ -33,7 +33,7 @@ def hello():
     #Gets count from redis, appends 1
     #save count to redis
     #returns a string incorporating this count
-    count = 1 #read_count()    
+    count = read_count()    
     count += 1
     save_count(count)
     return "<h1 style='color:green'>Hello World! {}</h1>".format(count) 

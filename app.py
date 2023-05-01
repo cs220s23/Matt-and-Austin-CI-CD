@@ -29,7 +29,7 @@ def save_count(count):
 
 @app.route("/")
 def hello():
-    count = read_count()    
+    count = 0    
     count += 1
     save_count(count)
     return "<h1 style='color:green'>Hello World! {}</h1>".format(count) 

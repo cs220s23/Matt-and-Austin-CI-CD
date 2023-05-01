@@ -31,7 +31,7 @@ def save_count(count):
 def hello():
     count = 0    
     count += 1
-    save_count(count)
+    #save_count(count)
     return "<h1 style='color:green'>Hello World! {}</h1>".format(count) 
 
 if __name__ == "__main__":

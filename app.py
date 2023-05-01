@@ -1,7 +1,5 @@
 from flask import Flask
-import requests
 import redis
-import time
 import dotenv
 import os
 

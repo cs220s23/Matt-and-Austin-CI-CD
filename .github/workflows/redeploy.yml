@@ -8,10 +8,10 @@ on:
     branches:
       - 'main'
     types: [closed]
-  workflow_dispatch:
+  workflow_dispatch: 
    
 env:
-  INSTANCE_IP: "3.89.125.125"
+  INSTANCE_IP: "54.205.12.49"
   INSTANCE_USER: "ec2-user"
   
 permissions:

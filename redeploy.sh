@@ -11,5 +11,3 @@ sudo cp app.env ./Matt-and-Austin-CI-CD
 sudo docker build -t app ./Matt-and-Austin-CI-CD
 
 sudo ./Matt-and-Austin-CI-CD/up
-
-sudo cp ./Matt-and-Austin-CI-CD/redeploy.sh .
